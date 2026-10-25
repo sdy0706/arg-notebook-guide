@@ -110,10 +110,22 @@ const SCENES = [
   { name: "manager-home", url: `${BASE}/options.html?reset`, w: 400, h: 340, steps: `await __h.wait(300);` },
   { name: "manager-list", url: `${BASE}/options.html?reset`, w: 400, h: 370, steps: `
       document.querySelector('[data-app="list"]').click();` },
-  { name: "manager-detail", url: `${BASE}/options.html?reset`, w: 400, h: 745, steps: `
+  { name: "manager-detail", url: `${BASE}/options.html?reset`, w: 400, h: 812, steps: `
       document.querySelector('[data-app="list"]').click();
       await __h.wait(200);
       document.querySelector('.project-tile').click();` },
+  { name: "domain-dialog", url: `${BASE}/options.html?reset`, w: 400, h: 830, steps: `
+      document.querySelector('[data-app="list"]').click();
+      await __h.wait(200);
+      document.querySelector('.project-tile').click();
+      await __h.wait(200);
+      document.querySelector('[data-action="add-domain"]').click();
+      await __h.wait(200);
+      document.querySelector('[data-domain-kind="path"]').click();
+      await __h.type(document.getElementById('domain-dialog-host'), 'x.com/echo_archive');
+      await __h.type(document.getElementById('domain-dialog-name'), '公式アカウント(X)');
+      document.activeElement.blur();`,
+    clip: `__h.rectOf([document.getElementById('domain-dialog')], 0)` },
   { name: "manager-settings", url: `${BASE}/options.html?reset`, w: 400, h: 1000, steps: `
       document.querySelector('[data-app="settings"]').click();` },
 ];

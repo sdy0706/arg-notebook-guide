@@ -43,6 +43,7 @@ window.__ARG_SEED = () => {
         domains: [
           { domain: location.hostname, name: "残響アーカイブ", totalPages: 12 },
           { domain: "mirror.example", name: "鏡の部屋", totalPages: 6 },
+          { domain: "x.com", path: "/echo_archive", name: "公式アカウント(X)", totalPages: null },
         ] },
       { id: P2, name: "灯台からの信号", startUrl: "https://lighthouse.example/", createdAt: t0 - 86400000 * 30,
         domains: [{ domain: "lighthouse.example", name: "", totalPages: 30 }] },

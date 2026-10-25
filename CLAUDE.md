@@ -116,8 +116,8 @@ A: お使いのブラウザの中だけです。
 | ファイル・ライトボックス・ビューワー(`05-files-lightbox`) | `06-toolbox.md` | `tool-files`、`lightbox` |
 | ツールボックス・文字化け変換・モールス信号(`06-toolbox`、`tools.js`) | `06-toolbox.md` | `toolbox`、`tool-mojibake`、`tool-morse` |
 | 右クリックメニュー(`07-menu`) | `08-menu.md`(調査の始め方が変わったら `03-start.md` も) | `menu`、`start-dialog` |
-| 管理画面(`08-layout-misc` の 8.4) | `07-manager.md` | `manager-home`、`manager-list`、`manager-detail`、`manager-settings` |
-| 導入ページ・調査ページの登録(`08-layout-misc` の 8.7、`07-menu`) | `03-start.md`、`09-faq.md` | `start-dialog` |
+| 管理画面(`08-layout-misc` の 8.4) | `07-manager.md` | `manager-home`、`manager-list`、`manager-detail`、`domain-dialog`、`manager-settings` |
+| 導入ページ・調査ページの登録(`08-layout-misc` の 8.7、`07-menu`) | `03-start.md`、`09-faq.md`(URL の範囲は `07-manager.md` も) | `start-dialog`、`domain-dialog`、`manager-detail` |
 | 保存するデータ・権限(`02-data`、`manifest.json` の `permissions`) | `privacy.md` | — |
 | 対応する Chrome のバージョン(`manifest.json` の `minimum_chrome_version`) | `02-install.md` | — |
 | よくある問い合わせ・つまずきやすい点 | `09-faq.md` | — |
