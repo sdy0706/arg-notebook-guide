@@ -138,15 +138,24 @@ function setupLightbox() {
 }
 
 // An image that isn't there yet shows a placeholder instead of a broken icon.
-function markMissingImages(root) {
+// A "name@2x.png" screenshot was taken at twice the size, so it's shown at
+// half its pixel width (no wider than the text).
+function setupImages(root) {
   for (const img of root.querySelectorAll(".figure-frame img")) {
-    const mark = () => {
-      const frame = img.closest(".figure-frame");
+    const frame = img.closest(".figure-frame");
+    const missing = () => {
       frame.classList.add("missing");
       frame.dataset.src = img.getAttribute("src");
     };
-    if (img.complete && !img.naturalWidth) mark();
-    else img.addEventListener("error", mark);
+    const loaded = () => {
+      const scale = /@2x\.\w+$/.test(img.getAttribute("src")) ? 2 : 1;
+      frame.style.width = `${img.naturalWidth / scale}px`;
+    };
+    if (img.complete) img.naturalWidth ? loaded() : missing();
+    else {
+      img.addEventListener("load", loaded);
+      img.addEventListener("error", missing);
+    }
   }
 }
 
@@ -176,7 +185,7 @@ async function render() {
     `<div class="layout${toc ? " has-toc" : ""}">${toc}</div>` +
     `<footer class="site-footer">© ${year} ${SITE_NAME}</footer>`);
   document.querySelector(".layout").appendChild(article);
-  markMissingImages(article);
+  setupImages(article);
   setupLightbox();
 
   // The md arrived after the browser tried to jump to #id, so jump now.
